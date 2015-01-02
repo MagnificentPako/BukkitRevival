@@ -14,18 +14,16 @@ public class TrapsAPI {
 
     private TrapsPlus plugin;
 
-    public TrapsAPI(TrapsPlus plugin){
+    public TrapsAPI(TrapsPlus plugin) {
         this.plugin = plugin;
     }
 
-    public boolean isTrap(Location loc){
+    public boolean isTrap(Location loc) {
         return this.plugin.getTraps().containsKey(loc);
     }
 
-    public void addTrap(Location loc, Traps trap){
-        this.plugin.addTrap(loc,trap);
+    public void addTrap(Location loc, Traps trap) {
+        this.plugin.addTrap(loc, trap);
     }
-
-
 
 }

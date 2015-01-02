@@ -19,17 +19,6 @@ public class BlindnessTrap extends Trap {
     }
 
     @Override
-    public void initConfig(FileConfiguration config) {
-        config.addDefault("blindness.duration", 2);
-        config.addDefault("blindness.amplifier", 1);
-        config.addDefault("blindness.ambient", true);
-
-        duration = config.getInt("blindness.duration");
-        amplifier = config.getInt("blindness.amplifier");
-        ambient = config.getBoolean("blindness.ambient");
-    }
-
-    @Override
     public void trigger(Player player) {
         player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, duration*20, amplifier, ambient));
     }
