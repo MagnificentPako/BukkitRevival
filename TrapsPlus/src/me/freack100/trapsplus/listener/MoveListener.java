@@ -22,19 +22,25 @@ public class MoveListener implements Listener {
 
     public MoveListener(TrapsPlus p) {
         this.plugin = p;
+        plugin.config.addDefault("restoreDisguiseAfterUse",true);
+        plugin.saveConfig();
+        plugin.saveDefaultConfig();
     }
 
     @EventHandler
     public void on(PlayerMoveEvent e) {
         Block block = e.getTo().add(0,-1,0).getBlock();
         Material mat = block.getType();
-        if(mat == Material.OBSIDIAN) {
+        //if(mat == Material.OBSIDIAN) {
             if (plugin.getTraps().containsKey(block.getLocation())) {
                 //sendMessage(e.getPlayer(), plugin.getTraps().get(block.getLocation()));
                 plugin.getTraps().get(block.getLocation()).getTrap().trigger(e.getPlayer());
                 plugin.removeTrap(block.getLocation());
+                if(plugin.config.getBoolean("restoreDisguiseAfterUse")){
+                    block.setType(Material.OBSIDIAN);
+                }
             }
-        }
+        //}
     }
 
     private void sendMessage(Player p,Traps trap){

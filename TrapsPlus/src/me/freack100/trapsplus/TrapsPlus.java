@@ -7,8 +7,7 @@
 
 package me.freack100.trapsplus;
 
-import me.freack100.trapsplus.listener.ClickListener;
-import me.freack100.trapsplus.listener.MoveListener;
+import me.freack100.trapsplus.listener.*;
 import me.freack100.trapsplus.traps.Trap;
 import me.freack100.trapsplus.traps.Traps;
 import org.bukkit.Bukkit;
@@ -51,9 +50,6 @@ public class TrapsPlus extends JavaPlugin {
             trap.getTrap().initConfig(config);
         }
 
-        saveConfig();
-        reloadConfig();
-
         if(!new File(getDataFolder() + "/traps.yml").exists()) try{new File(getDataFolder()+"/traps.yml").createNewFile();}catch(Exception e){};
         savedTraps = YamlConfiguration.loadConfiguration(new File(getDataFolder() + "/traps.yml"));
 
@@ -67,6 +63,11 @@ public class TrapsPlus extends JavaPlugin {
 
         pm.registerEvents(new ClickListener(this),this);
         pm.registerEvents(new MoveListener(this),this);
+        pm.registerEvents(new BreakListener(this),this);
+        pm.registerEvents(new DisguiseListener(this),this);
+
+        saveConfig();
+        reloadConfig();
     }
 
     @Override
