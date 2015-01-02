@@ -17,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
 
 public class ClickListener implements Listener {
 
@@ -51,26 +52,31 @@ public class ClickListener implements Listener {
                         sendMessage(p,Traps.BLINDNESS);
                         plugin.addTrap(block.getLocation(),Traps.BLINDNESS);
                         decreaseItem(p,e);
+                        return;
                     }
                     case FEATHER:{
                         sendMessage(p,Traps.JUMP);
                         plugin.addTrap(block.getLocation(),Traps.JUMP);
                         decreaseItem(p,e);
+                        return;
                     }
                     case GOLDEN_APPLE:{
                         sendMessage(p,Traps.REGENERATION);
                         plugin.addTrap(block.getLocation(),Traps.REGENERATION);
                         decreaseItem(p,e);
+                        return;
                     }
                     case DIAMOND:{
                         sendMessage(p,Traps.HEAL);
                         plugin.addTrap(block.getLocation(),Traps.HEAL);
                         decreaseItem(p,e);
+                        return;
                     }
                     case IRON_SWORD:{
                         sendMessage(p,Traps.STRENGTH);
                         plugin.addTrap(block.getLocation(),Traps.STRENGTH);
                         decreaseItem(p,e);
+                        return;
                     }
                 }
             }
