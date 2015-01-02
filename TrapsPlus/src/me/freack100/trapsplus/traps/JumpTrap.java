@@ -12,14 +12,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class SlowTrap extends Trap {
+public class JumpTrap extends Trap {
 
-    public SlowTrap() {
-        super("Slow");
+    public JumpTrap() {
+        super("Jump");
     }
 
     @Override
     public void trigger(Player player) {
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, duration*20, amplifier, ambient));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, duration*20, amplifier, ambient));
     }
+
 }

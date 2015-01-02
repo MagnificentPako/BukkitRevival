@@ -47,6 +47,31 @@ public class ClickListener implements Listener {
                         decreaseItem(p,e);
                         return;
                     }
+                    case SLIME_BALL:{
+                        sendMessage(p,Traps.BLINDNESS);
+                        plugin.addTrap(block.getLocation(),Traps.BLINDNESS);
+                        decreaseItem(p,e);
+                    }
+                    case FEATHER:{
+                        sendMessage(p,Traps.JUMP);
+                        plugin.addTrap(block.getLocation(),Traps.JUMP);
+                        decreaseItem(p,e);
+                    }
+                    case GOLDEN_APPLE:{
+                        sendMessage(p,Traps.REGENERATION);
+                        plugin.addTrap(block.getLocation(),Traps.REGENERATION);
+                        decreaseItem(p,e);
+                    }
+                    case DIAMOND:{
+                        sendMessage(p,Traps.HEAL);
+                        plugin.addTrap(block.getLocation(),Traps.HEAL);
+                        decreaseItem(p,e);
+                    }
+                    case IRON_SWORD:{
+                        sendMessage(p,Traps.STRENGTH);
+                        plugin.addTrap(block.getLocation(),Traps.STRENGTH);
+                        decreaseItem(p,e);
+                    }
                 }
             }
         }

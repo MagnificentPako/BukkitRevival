@@ -10,6 +10,11 @@ package me.freack100.trapsplus.traps;
 public enum Traps {
 
     POISON(new PoisonTrap()),
+    BLINDNESS(new BlindnessTrap()),
+    JUMP(new JumpTrap()),
+    HEAL(new HealTrap()),
+    REGENERATION(new RegenerationTrap()),
+    STRENGTH(new StrengthTrap()),
     SLOW(new SlowTrap());
 
     private Trap clazz;

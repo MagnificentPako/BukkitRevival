@@ -26,7 +26,16 @@ public abstract class Trap {
         return name;
     }
 
-    public abstract void initConfig(FileConfiguration config);
+    public final void initConfig(FileConfiguration config){
+        String key = this.name.toLowerCase();
+        config.addDefault(key+".duration", 2);
+        config.addDefault(key+".amplifier", 1);
+        config.addDefault(key+".ambient", true);
+
+        duration = config.getInt(key+".duration");
+        amplifier = config.getInt(key+".amplifier");
+        ambient = config.getBoolean(key+".ambient");
+    };
 
     public abstract void trigger(Player player);
 

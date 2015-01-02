@@ -7,19 +7,18 @@
 
 package me.freack100.trapsplus.traps;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class SlowTrap extends Trap {
+public class StrengthTrap extends Trap {
 
-    public SlowTrap() {
-        super("Slow");
+    public StrengthTrap() {
+        super("Strength");
     }
 
     @Override
     public void trigger(Player player) {
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, duration*20, amplifier, ambient));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, duration*20, amplifier, ambient));
     }
 }

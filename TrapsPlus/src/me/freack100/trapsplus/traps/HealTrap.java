@@ -7,19 +7,18 @@
 
 package me.freack100.trapsplus.traps;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class SlowTrap extends Trap {
+public class HealTrap extends Trap {
 
-    public SlowTrap() {
-        super("Slow");
+    public HealTrap() {
+        super("Heal");
     }
 
     @Override
     public void trigger(Player player) {
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, duration*20, amplifier, ambient));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, duration*20, amplifier, ambient));
     }
 }

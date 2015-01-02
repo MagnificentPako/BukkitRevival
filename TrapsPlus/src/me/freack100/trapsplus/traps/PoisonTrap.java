@@ -20,17 +20,6 @@ public class PoisonTrap extends Trap {
     }
 
     @Override
-    public void initConfig(FileConfiguration config) {
-        config.addDefault("poison.duration", 2);
-        config.addDefault("poison.amplifier", 1);
-        config.addDefault("poison.ambient", true);
-
-        duration = config.getInt("poison.duration");
-        amplifier = config.getInt("poison.amplifier");
-        ambient = config.getBoolean("poison.ambient");
-    }
-
-    @Override
     public void trigger(Player player) {
         player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, duration*20, amplifier, ambient));
     }

@@ -32,8 +32,17 @@ public class TrapsPlus extends JavaPlugin {
         return traps;
     }
 
+    private static TrapsAPI api;
+
+    public static TrapsAPI getAPI(){
+        return api;
+    }
+
     @Override
     public void onEnable(){
+
+        api = new TrapsAPI(this);
+
         //Set up config
         config = getConfig();
         config.options().copyDefaults(true);
